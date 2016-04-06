@@ -25,7 +25,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View v){
-        editResult.setText("Test");
+
+        int lightNumber;
+        String lightName;
+
+        lightNumber = Integer.parseInt(String.valueOf(editResult.getText()));
+
+        switch (lightNumber) {
+            case 1:  lightName = "Красный";
+                break;
+            case 2:  lightName = "Желтый";
+                break;
+            case 3:  lightName = "Зеленый";
+                break;
+            default: lightName = "Не знаем такого";
+                break;
+        }
+        editResult.setText(lightName);
+
     }
 
 }
