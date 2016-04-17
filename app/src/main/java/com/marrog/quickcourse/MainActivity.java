@@ -26,22 +26,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClick(View v){
 
-        int lightNumber;
-        String lightName;
+       HeavyBox box = new HeavyBox();
 
-        lightNumber = Integer.parseInt(String.valueOf(editResult.getText()));
-
-        switch (lightNumber) {
-            case 1:  lightName = "Красный";
-                break;
-            case 2:  lightName = "Желтый";
-                break;
-            case 3:  lightName = "Зеленый";
-                break;
-            default: lightName = "Не знаем такого";
-                break;
-        }
-        editResult.setText(lightName);
+        editResult.setText(String.valueOf(box.getVolume()));
 
     }
 
