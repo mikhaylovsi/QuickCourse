@@ -2,6 +2,8 @@ package com.marrog.quickcourse;
 
 import android.util.Log;
 
+import java.sql.SQLOutput;
+
 /**
  * Created by Сергей on 17.04.2016.
  */
@@ -11,7 +13,9 @@ public class Box {
     int height = 10;
     int depth = 10;
 
-
+    Box(int i){
+        System.out.println("Hey men!!!");
+    }
 
     public int getVolume(){
         return width * height * depth;
@@ -25,10 +29,12 @@ public class Box {
      int height = 20;
      int depth = 20;
 
-  HeavyBox(){
+  HeavyBox(int i){
+      super(i);
       System.out.println(super.width);
       System.out.println(super.depth);
       System.out.println(super.height);
+      System.out.println(i);
   }
 
 
