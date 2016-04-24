@@ -26,9 +26,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClick(View v){
 
-       HeavyBox box = new HeavyBox(5);
-
-        editResult.setText(String.valueOf(box.getVolume()));
+       Figure figure = new Square();
+        figure.area();
 
     }
 
