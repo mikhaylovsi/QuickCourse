@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,10 +25,21 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void createCat(){
+
+        Toast.makeText(this, "Вы создали котёнка", Toast.LENGTH_LONG).show();
+        throw new NullPointerException("Кота не существует");
+
+    }
+
     public void onClick(View v){
 
-       Figure figure = new Square();
-        figure.area();
+      try {
+          createCat();
+      } catch (NullPointerException e){
+
+          Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
+      }
 
     }
 
