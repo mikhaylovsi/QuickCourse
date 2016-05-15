@@ -13,7 +13,7 @@ public class Box {
     int height = 10;
     int depth = 10;
 
-    Box(int i){
+   Box(int i){
         System.out.println("Hey men!!!");
     }
 
@@ -35,7 +35,8 @@ public class Box {
       System.out.println(super.depth);
       System.out.println(super.height);
       System.out.println(i);
-  }
+
+    }
 
 
 }

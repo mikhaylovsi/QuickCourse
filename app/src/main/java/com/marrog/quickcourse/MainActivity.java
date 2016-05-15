@@ -23,24 +23,54 @@ public class MainActivity extends AppCompatActivity {
         editResult = (EditText)findViewById(R.id.editText);
         textViewInfo = (TextView)findViewById(R.id.textViewInfo);
 
-    }
+        new NewThread();
 
-    public void createCat(){
-
-        Toast.makeText(this, "Вы создали котёнка", Toast.LENGTH_LONG).show();
-        throw new NullPointerException("Кота не существует");
+       count(1);
 
     }
+
+    public  void count(int threadNum){
+
+        try {
+
+            synchronized (this){
+            for (int i = 100; i > 0; i--) {
+
+                System.out.println("Поток " + threadNum + " сделал " + i);
+                Thread.sleep(200);
+
+            }
+        }
+        }catch (Exception e){
+            System.out.println("Главный поток прерван");
+        }
+        System.out.println("поток " + threadNum + " завершен");
+
+
+    }
+
 
     public void onClick(View v){
 
-      try {
-          createCat();
-      } catch (NullPointerException e){
+    }
 
-          Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
-      }
+    class NewThread extends Thread{
 
+
+
+        NewThread() {
+            super("Второй поток");
+            System.out.println("Создан второй поток " + this);
+            start();
+        }
+
+
+        @Override
+        public void run() {
+
+            count(2);
+
+        }
     }
 
 }
